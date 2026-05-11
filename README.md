@@ -28,6 +28,8 @@ This is a [web based cheat sheet](https://bmoren.github.io/p5js-cheat-sheet/) to
   + Translation by: [Drafffffff](https://github.com/draffffff)
 + [Traditional Chinese](https://bmoren.github.io/p5js-cheat-sheet/zh-tw.html)
   + Translation by: [eziraros](https://twitter.com/s_r_r_z_)
++ [Turkish](https://bmoren.github.io/p5js-cheat-sheet/tr.html)
+  + Translation by: [Bedirhan Ugur](https://github.com/bedirxanugur)
 
 There are also pre-compiled PDF's available within this repository for each translation for folks who would like to get off-line ASAP, or who would like an immediate copy of a cheat sheet.
 

@@ -136,7 +136,7 @@ nav#page-header #language-selection{
 div.column section ul{
 	display:grid;
 	grid-template-columns: repeat(3,1fr);
-	grid-template-rows: repeat(2,1fr)
+	grid-template-rows: repeat(2,1fr);
 	align-content:center;
 	justify-content: center;
 
@@ -200,8 +200,12 @@ div.column section ul{
 	}
 
 /* special for printing the JA, ZH since the characters take more vertical space */
-	#ja , #zh{
+	#ja , #zh {
 		font-size: 1.0vw;
+	}
+
+	#tr {
+		font-size: 0.97vw;
 	}
 
  	nav#page-header{

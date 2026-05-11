@@ -18,6 +18,7 @@ document.write(`
     <option value="ko"> 한국어 </option>
     <option value="id"> Indonesia </option>
     <option value="pt"> Português </option>
+    <option value="tr"> Türkçe </option>
     </select>
     <li> | </li>
     <li><a href="https://p5js.org/reference/">p5js Reference</a></li>

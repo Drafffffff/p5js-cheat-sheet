@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>p5.js Özet Bilgiler</title>
+    <meta http-equiv="pragma" content="no-cache" />
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="stylesheet" type="text/css" href="style.css" media="all" />
+    <link rel="stylesheet" href="prism.css" />
+  </head>
+
+  <body id="tr">
+    <!-- Include the menu, there's likely a more elegent way to do this -->
+    <script src="menu.js"></script>
+
+    <article id="cheat-sheet">
+      <div class="column">
+        <header>
+          <h1 id="title">p5.js</h1>
+          <p id="subtitle">Başlangıç için <br />Özet Bilgiler!</p>
+        </header>
+
+        <section>
+          <h1>Program Yapısı</h1>
+          <pre><code class="language-javaScript">//program başladığında bir kez çalışır
+function setup(){
+  createCanvas(800,600); 
+  //piksel olarak genişlik, yükseklik
+}
+
+//setup() tamamlandıktan sonra sürekli çalışır
+function draw(){
+  //bir döngü içinde yürütülen kod
+}
+</code></pre>
+        </section>
+
+        <section>
+          <h1>Sistem Değişkenleri</h1>
+          <pre><code class="language-javaScript">windowWidth / windowHeight
+//pencere genişliği / yüksekliği
+
+width / height
+//kanvasın genişliği / yüksekliği
+
+mouseX / mouseY
+//anlık yatay / dikey fare konumu
+</code></pre>
+        </section>
+
+        <section>
+          <h1>Konsol</h1>
+          <pre><code class="language-javaScript">print();
+//değerleri konsola yazdırır
+
+//çift eğik çizgi (//) yorum satırıdır
+//program yorum satırlarını çalıştırmaz
+</code></pre>
+        </section>
+
+        <section>
+          <h1>Renk</h1>
+          <pre><code class="language-javaScript">fill(120); //gri: 0-255
+fill(100,125,255); //kırmızı, yeşil, mavi: 0-255
+fill(255, 0, 0, 50); //kırmızı, yeşil, mavi, alfa
+fill('red'); //CSS-SVG renk adı
+fill('#ccc'); //3 haneli hex renk kodu
+fill('#222222'); //6 haneli hex renk kodu
+color(0, 0, 255); //p5.Color nesnesi
+</code></pre>
+        </section>
+      </div>
+      <!-- End First Col -->
+
+      <div class="column">
+        <section>
+          <h1>Matematiksel İşlevler</h1>
+          <pre><code class="language-javaScript">+ - / *  //temel matematik operatörleri
+
+random(minimum, maksimum);
+//belirtilen aralıkta rastgele sayı üretir
+
+map(değer, girişMin, girişMaks, çıkışMin, çıkışMaks);
+//bir değeri aralıklar arasında doğrusal eşler
+</code></pre>
+        </section>
+
+        <!-- CONSIDERING ADDING THIS HERE AND MOVING MATH TO THE BOTTOM OF COL 1, THOGUHTS? -->
+        <!-- <section>
+			<h1>variable definition</h1>
+			<pre><code class="language-javaScript">//let & keyword defines a variable
+// use single = to store data in the variable
+let variableName = 100;
+let myWords = "a string of text!";
+let randStorage = random(0,255); // store returned data
+</code></pre>
+		</section> -->
+
+        <section>
+          <h1>2 Boyutlu Şekiller</h1>
+          <pre><code class="language-javaScript">line(x1, y1, x2, y2); //çizgi
+
+ellipse(x, y, genişlik, yükseklik); //elips
+
+rect(x, y, genişlik, yükseklik); //dikdörtgen
+
+arc(x, y, genişlik, yükseklik, başlamaAçısı, bitirmeAçısı); //yay
+
+beginShape(); //köşe noktalarıyla özel şekil oluşturmaya başlar
+  vertex(x1, y1); //köşe noktası
+  vertex(x2, y2);
+  vertex(x3, y3);
+  //bu yapı içine daha fazla köşe noktası eklenebilir
+endShape(CLOSE);
+
+text("yazı", x, y, kutuGenişliği, kutuYüksekliği);
+//yazıyı verilen konuma ve kutu boyutuna göre çizer
+</code></pre>
+
+          <ul>
+            <li class="canvas-container">
+              <h2>koordinatlar</h2>
+              <div id="grid-canvas"></div>
+            </li>
+            <li class="canvas-container">
+              <h2>line()</h2>
+              <div id="line-canvas"></div>
+            </li>
+            <li class="canvas-container">
+              <h2>ellipse()</h2>
+              <div id="ellipse-canvas"></div>
+            </li>
+            <li class="canvas-container">
+              <h2>rect()</h2>
+              <div id="rect-canvas"></div>
+            </li>
+            <li class="canvas-container">
+              <h2>arc()</h2>
+              <div id="arc-canvas"></div>
+            </li>
+            <li class="canvas-container">
+              <h2>vertex()</h2>
+              <div id="vertex-canvas"></div>
+            </li>
+          </ul>
+        </section>
+      </div>
+      <!-- End Second Col -->
+      <div class="column">
+        <section>
+          <h1>Özellikler</h1>
+          <pre><code class="language-javaScript">background(renk);
+//arka plan rengi
+
+fill(renk);
+//dolgu rengi
+
+noFill();
+//dolgu rengini kaldırır
+
+stroke(renk);
+//kontur rengi
+
+strokeWeight(kalınlık);
+//piksel olarak kontur kalınlığı
+
+noStroke();
+//kontur rengini kaldırır
+
+ellipseMode(MODE);
+rectMode(MODE);
+//CENTER veya CORNER
+
+textSize(boyut);
+//piksel olarak yazı boyutu
+</code></pre>
+        </section>
+
+        <section>
+          <h1>Koşullu Mantık</h1>
+          <div class="logic">
+            <pre><code class="language-javaScript">if(koşul){
+  //yürütülecek kod
+}
+
+=== //değer ve tür eşittir
+!== //değer veya tür eşit değildir
+>   //büyüktür
+<   //küçüktür
+>=  //büyük veya eşittir
+<=  //küçük veya eşittir
+
+</code></pre>
+            <div id="ifelse-canvas"></div>
+          </div>
+        </section>
+
+        <footer>
+          Derleyen Ben Moren
+          <a href="http://benmoren.com">http://benmoren.com</a> CC-BY-SA-NC-4.0
+          <br />Çeviren
+          <a target="_blank" href="https://github.com/bedirxanugur"
+            >Bedirhan Ugur</a
+          >
+        </footer>
+      </div>
+    </article>
+
+    <script type="text/javascript">
+      // Terms to translate for diagrams
+      var terms = {
+        width: "genişlik",
+        height: "yükseklik",
+        stop: "bitir",
+        start: "başla",
+        true: "doğru",
+        false: "yanlış",
+        continue_program: "programa devam et",
+        test: "koşul",
+        statements: "kod bloğu",
+      };
+    </script>
+
+    <script src="prism.js"></script>
+    <script src="p5.min.js"></script>
+    <script src="diagram.js"></script>
+  </body>
+</html>
